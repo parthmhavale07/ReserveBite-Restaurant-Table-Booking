@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReserveBite | Restaurant Table Booking</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+
+        <a href="#home" class="logo">
+            🍽️ Reserve<span>Bite</span>
+        </a>
+
+        <div class="navlinks" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#booking">Book Table</a>
+            <a href="#mybooking">My Booking</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+            <button id="themeBtn" class="theme-btn">
+                🌙
+            </button>
+
+            <button id="menuBtn" class="menu-btn">
+                ☰
+            </button>
+        </div>
+
+    </nav>
+</header>
+
+<main>
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            ✦ SMART & EASY TABLE BOOKING
+        </div>
+
+        <p class="tag">
+            GOOD FOOD • GREAT MOMENTS
+        </p>
+
+        <h1>
+            Reserve your table.<br>
+            <span>Enjoy every bite.</span>
+        </h1>
+
+        <p class="hero-description">
+            Skip the queue and reserve your perfect table
+            at ReserveBite in just a few clicks.
+        </p>
+
+        <div class="hero-actions">
+
+            <a href="#booking" class="btn">
+                Book a Table →
+            </a>
+
+            <a href="#menu" class="btn secondary-btn">
+                Explore Menu
+            </a>
+
+        </div>
+
+        <div class="hero-stats">
+
+            <div>
+                <strong>12+</strong>
+                <span>Tables</span>
+            </div>
+
+            <div>
+                <strong>4.9★</strong>
+                <span>Guest Rating</span>
+            </div>
+
+            <div>
+                <strong>11AM–10:30PM</strong>
+                <span>Open Daily</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+        <div class="hero-orbit orbit-one"></div>
+
+        <div class="hero-orbit orbit-two"></div>
+
+        <div class="hero-food-card">
+
+           
+            <div class="hero-food hero-real-food"></div>
+
+            <strong>
+                Freshly Served
+            </strong>
+
+            <span>
+                Made for great moments
+            </span>
+
+        </div>
+
+
+        <div class="floating-card floating-top">
+
+            ⭐ <b>4.9</b>
+
+            <small>
+                Guest rating
+            </small>
+
+        </div>
+
+
+        <div class="floating-card floating-bottom">
+
+            ✓ <b>Easy Booking</b>
+
+            <small>
+                Reserve in seconds
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="menu">
+  <div class="section-title"><p>OUR MENU</p><h2>Popular Favorites</h2></div>
+  
+
+
+  <div class="cards">
+
+  <div class="food-card">
+    <div class="food-img pizza-img"></div>
+    <h3>Margherita Pizza</h3>
+    <p>Classic tomato, mozzarella & basil</p>
+    <b>₹249</b>
+  </div>
+
+  <div class="food-card">
+    <div class="food-img pasta-img"></div>
+    <h3>Creamy Pasta</h3>
+    <p>Rich creamy sauce with fresh herbs</p>
+    <b>₹229</b>
+  </div>
+
+  <div class="food-card">
+    <div class="food-img burger-img"></div>
+    <h3>Classic Burger</h3>
+    <p>Juicy patty, cheese & fresh veggies</p>
+    <b>₹199</b>
+  </div>
+
+  <div class="food-card">
+    <div class="food-img cake-img"></div>
+    <h3>Chocolate Cake</h3>
+    <p>Soft chocolate cake with ganache</p>
+    <b>₹149</b>
+  </div>
+
+</div>
+
+</section>
+
+<section id="booking" class="section booking-section">
+  <div class="section-title"><p>RESERVATION</p><h2>Book Your Table</h2></div>
+  <div class="booking-grid">
+    <form id="bookingForm" class="booking-form">
+      <div class="form-row">
+        <label>Full Name<input id="name" required placeholder="Enter your name"></label>
+        <label>Mobile Number<input id="phone" required pattern="[0-9]{10}" placeholder="10-digit mobile"></label>
+      </div>
+      <div class="form-row">
+        <label>Date<input type="date" id="date" required>
+<small class="field-note">Bookings are available from today onward.</small></label>
+        <label>Time<select id="time" required>
+          <option value="">Select time</option><option>12:00 PM</option><option>01:00 PM</option>
+          <option>02:00 PM</option><option>07:00 PM</option><option>08:00 PM</option><option>09:00 PM</option>
+        </select></label>
+      </div>
+      <label>Number of Guests<select id="guests" required>
+        <option value="">Select guests</option><option>1</option><option>2</option><option>3</option>
+        <option>4</option><option>5</option><option>6</option>
+      </select></label>
+      <div class="table-selection-header">
+    <div>
+        <label>Select Table</label>
+        <p>Choose an available table for your reservation.</p>
+    </div>
+
+    <div class="table-legend">
+        <span><i class="legend available"></i> Available</span>
+        <span><i class="legend selected"></i> Selected</span>
+        <span><i class="legend booked"></i> Booked</span>
+    </div>
+</div>
+
+<div id="tables" class="tables"></div>
+
+<div class="selected-table-info" id="selectedTableInfo">
+    🪑 No table selected yet
+</div>
+      <input type="hidden" id="selectedTable" required>
+      <label>Special Request<textarea id="request" placeholder="Birthday, window seat, etc."></textarea></label>
+      <button class="btn full" type="submit">Confirm Reservation</button>
+    </form>
+    <div class="info-box">
+      <h3>Why ReserveBite?</h3>
+      <p>✓ Instant table reservation</p><p>✓ Choose your preferred table</p><p>✓ Easy booking cancellation</p><p>✓ No waiting in long queues</p>
+      <div class="offer">🎁 <strong>Special Offer</strong><br>Get 10% OFF on your first reservation!</div>
+    </div>
+  </div>
+</section>
+
+<section id="mybooking" class="section">
+  <div class="section-title"><p>MANAGE</p><h2>My Booking</h2></div>
+  <div class="manage-box">
+    <div class="search-row"><input id="searchBooking" placeholder="Enter Booking ID or mobile number"><button class="btn" onclick="findBooking()">Search</button></div>
+    <div id="bookingResult"></div>
+  </div>
+</section>
+
+<section class="section reviews">
+  <div class="section-title"><p>GUESTS LOVE US</p><h2>What Our Customers Say</h2></div>
+  <div class="cards">
+    <div class="review">⭐⭐⭐⭐⭐<p>“The table booking was quick and super easy!”</p><b>— Aditi</b></div>
+    <div class="review">⭐⭐⭐⭐⭐<p>“Loved the food and the beautiful ambience.”</p><b>— Rohan</b></div>
+    <div class="review">⭐⭐⭐⭐⭐<p>“No waiting, no hassle. Highly recommended.”</p><b>— Sneha</b></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Visit ReserveBite</h2>
+  <p>📍 Pune, Maharashtra &nbsp; | &nbsp; 📞 +91 98765 43210 &nbsp; | &nbsp; ✉️ hello@reservebite.com</p>
+  <p>Open daily: 11:00 AM – 10:30 PM</p>
+</section>
+</main>
+
+<div id="modal" class="modal"><div class="modal-card"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+
+
+<footer class="footer">
+  <p>© 2026 <strong>ReserveBite</strong>. All Rights Reserved.</p>
+  <p>🍽️ Good Food • Great Moments • Easy Booking</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
